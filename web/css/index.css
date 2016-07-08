@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container{	
+	width:980px;
+	margin:0px auto;}
+#content{
+	width:980px;
+	height:500px;
+	margin:0px auto;}
+#add{
+	#ad
+	width:524px; 
+	height:190px; position:relative;}
+ #pic1{ 
+	position:absolute;
+ 	top:0px;
+  	left:0px;}
+ #pic2{ 
+	position:absolute;
+ 	top:0px;
+  	left:0px;}
+ #pic3{ 
+	position:absolute;
+ 	top:0px; 
+ 	left:0px;}
+#boxleft{
+	width:470px;
+	height:300px;
+	margin-top:150px;
+	float:left;
+	border:1px #6CF solid;
+	background-image:url(images/12.png);
+	background-repeat:no-repeat;}
+#boxright{
+	width:470px;
+	height:300px;
+	margin-top:150px;
+	float:right;
+	border:1px #6CF solid;
+	background-image:url(images/12.png);
+	background-repeat:no-repeat;}
+.tag{
+	font-size:18px; color:#003; font-weight:bold;
+	padding-left:20px;
+	padding-top:20px;}
+li{
+	font-size:14px;
+	color:#300;
+	line-height:28px;
+	text-decoration:none;
+	}
+a{
+	text-decoration:none;}
+li:hover{
+	background-color:#066;}

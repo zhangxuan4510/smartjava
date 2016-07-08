@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#container{	
+	width:980px;
+	margin:0px auto;}
+.reg{width:100%;padding-top:65px;height:500px;background:url(../images/reg_bg.gif) no-repeat;}
+.reg textarea{border:1px #ccc solid;}
+.reg .protocol{vertical-align:top;}
+a_r{text-align:right;}
+td{
+	font-size:14px;}
+textarea{
+	font-size:14px;}
+.high{
+	color:#F00;}
+.formtips{width: 200px;margin:2px;padding:2px;}
+.onErr{
+    background:#FFE0E9 url(../images/reg3.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.onSuc{
+    background:#E9FBEB url(../images/reg4.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.anno{
+	font-size:14px;
+	color:#F00;
+	margin-top:50px;
+	position:absolute;}
