@@ -1,0 +1,53 @@
+#container{	
+	width:980px;
+	margin:0px auto;}
+#content{
+	width:980px;
+	margin:0px auto;}
+#check{
+	background-image:url(../images/safescore.png);
+	height:54px;
+	width:980px;
+	background-repeat:no-repeat;
+	}
+#checkagain{
+	margin-left:840px;
+	padding-top:4px;
+	position:absolute;}
+#tunnel{
+	width:245px;
+	height:350px;
+	float:left;
+	margin-top:65px;}
+#history{
+	width:727px;
+	height:350px;
+	float:left;
+	margin-top:65px;
+	border:#F60 solid 2px;
+	border-right-style:none;
+	border-bottom-style:none;
+	border-top-style:none;}
+#box{
+	position:absolute;
+	margin:0px;
+	padding:0px;}
+#changepwd{
+	position:absolute;
+	margin:0px;
+	padding:0px;}
+#tab1{
+	width:250px;
+	height:300px;}
+#tab2{
+	width:730px;
+	height:300px;}
+td{
+	text-align:center;
+	font-size:14px;}
+.color{
+	background-color:#0F0;
+	text-align:left;}
+#cpwd{
+	color:#63C;}
+

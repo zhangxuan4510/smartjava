@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+#container{	
+	width:980px;
+	margin:0px auto;}
+#select{
+	margin-left:230px;}
+#select li { 
+	float:left; 
+	text-align:center; 
+	cursor:pointer; 
+	list-style:none; 
+	padding:1px 6px; 
+	margin-right:4px; 
+	background:#F1F1F1; 
+	border:1px solid #898989; 
+	border-bottom:none;}
+#select li.hover { background:#DFDFDF;}
+#select li.selected { color:#FFF; background:#6D84B4;}
+#box { 
+	clear:both; 
+	border:1px solid #898989;
+	background-color:#FCF;
+	height:300px;}
+.row1{
+	width:450px;
+	text-align:right;
+	}
+td{
+	font-size:14;
+	line-height:30px;}
+.center{
+	text-align:center;}
+.right{
+	text-align:right;}
+.left{
+	text-align:left;}
+#tab1{
+	width:980px;
+	border:1px #FC9;
+}
+.hide{display:none;}

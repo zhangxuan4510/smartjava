@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container{	
+	width:980px;
+	margin:0px auto;}
+#content{
+	width:980px;
+	margin:0px auto;}
+td{
+	background-color:#FFF;
+	font-size:12px;}
+.row1{
+	text-align:right;}
+#flag{
+	color:#00F;}
+.changecolor{
+	color:#F00;}
+#nextstep{
+	text-align:center;}
+.color{
+	background-color:#0CF;}

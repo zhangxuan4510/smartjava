@@ -30,6 +30,20 @@ public class UtilDB {
         return conn;
     }
 
+    public static DataSource getDataSource(){
+        DataSource ds=null;
+        try{
+            //初始化容器
+            Context context=new InitialContext();
+            //通过JNDI查找数据源
+            ds=(DataSource) context.lookup("java:comp/env/mysql");
+        }catch (Exception e){
+            System.out.println(e);
+        };
+        return ds;
+    }
+
+
     public static void closeParament(Statement stt, PreparedStatement stat,Connection conn, ResultSet res) {
         try {
             if (stt != null) {
@@ -49,4 +63,11 @@ public class UtilDB {
         }
     }
 
+    public static void closeConn(Connection conn){
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

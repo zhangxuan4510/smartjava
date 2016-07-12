@@ -3,6 +3,7 @@ package edu.bjtu.servlet;
 import edu.bjtu.dao.RegisterDao;
 import edu.bjtu.daoimpl.RegisterDaoimpl;
 import edu.bjtu.model.User;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -66,20 +69,24 @@ public class RegisterServlet extends HttpServlet {
          String custID= UUID.randomUUID().toString();
          custID.replace("-","");
         custID=custID.substring(0,11);
+        Map params=request.getParameterMap();
+        try {
+            BeanUtils.populate(user,params);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
         user.setCustID(custID);
-        user.setName(request.getParameter("name"));
-        user.setUserName(request.getParameter("userName"));
-        user.setUserPwd(request.getParameter("password"));
-        user.setCardID(request.getParameter("cardID"));
-        user.setPhone(request.getParameter("phone"));
-        user.setEmail(request.getParameter("email"));
-        user.setAddress(request.getParameter("address"));
         user.setRegisterDate(new Date(System.currentTimeMillis()));
         user.setRecentDate(new Date(System.currentTimeMillis()));
-        System.out.println(new Date(System.currentTimeMillis()));
         boolean flag=dao.register(user);
         if(flag){
             request.getRequestDispatcher("index.jsp").forward(request,response);
+        }else{
+            System.out.println("输入错误");
         }
     }
+
+
 }

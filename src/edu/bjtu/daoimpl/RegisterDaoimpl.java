@@ -1,13 +1,16 @@
-package edu.bjtu.daoimpl;
+ package edu.bjtu.daoimpl;
 
 import edu.bjtu.dao.RegisterDao;
 import edu.bjtu.model.User;
 import edu.bjtu.util.UtilDB;
+import net.sf.json.JSONArray;
+import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by zhangxuan on 2016/7/8.
@@ -21,24 +24,15 @@ public class RegisterDaoimpl implements RegisterDao {
         sqlbuff.append("insert into user(custid,name,username,userpwd,cardid,phone,email,address,registerdate,recentdate) ");
         sqlbuff.append("values(?,?,?,?,?,?,?,?,?,?)");
         Connection conn=UtilDB.getConn();
-        PreparedStatement stat=null;
+        QueryRunner qr=new QueryRunner();
+        Object[] obj={user.getCustID(),user.getName(),user.getUserName(),user.getUserPwd(),user.getCardID(),
+        user.getPhone(),user.getEmail(),user.getAddress(),user.getRegisterDate(),user.getRecentDate()};
         try {
-            stat=conn.prepareStatement(sqlbuff.toString());
-            stat.setString(1,user.getCustID());
-            stat.setString(2,user.getName());
-            stat.setString(3,user.getUserName());
-            stat.setString(4,user.getUserPwd());
-            stat.setString(5,user.getCardID());
-            stat.setString(6,user.getPhone());
-            stat.setString(7,user.getEmail());
-            stat.setString(8,user.getAddress());
-            stat.setDate(9,user.getRegisterDate());
-            stat.setDate(10,user.getRecentDate());
-            count=stat.executeUpdate();
+            count=qr.update(conn,sqlbuff.toString(),obj);
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            UtilDB.closeParament(null,stat,conn,null);
+            UtilDB.closeConn(conn);
         }
         if(count!=0)
             return  true;
@@ -90,5 +84,13 @@ public class RegisterDaoimpl implements RegisterDao {
             UtilDB.closeParament(null,stat,conn,res);
         }
         return falg;
+    }
+
+    public String getUserByJson(){
+
+        List<User> users=null;
+        JSONArray json=JSONArray.fromObject(users);
+        return json.toString();
+
     }
 }

@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container{	
+	width:980px;
+	margin:0px auto;}
+#content{
+	width:300px;
+	margin:0px auto;}
+.text1{
+	font-size:14px;
+	line-height:30px;
+	text-align:center;}

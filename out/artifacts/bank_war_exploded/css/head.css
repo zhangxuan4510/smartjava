@@ -1,0 +1,51 @@
+#head{
+	width:980px;
+	height:136px;
+	margin:0px auto;
+	}
+.logo{
+	width:163px;
+	height:65px;
+	float:left;
+	background-color:#0C0;
+	margin-top:10px;}
+.rightcontent{
+	width:330px;
+	height:75px;
+	margin-top:10px;
+	float:right;}
+.navigation{
+	width:980px;
+	height:35px;
+	clear:both;
+	background-image:url(../images/navigation.png);
+	background-repeat:no-repeat;}
+.navigation li{
+	font-weight:bold;
+	font-size:15px;
+	color:#036;
+	list-style:none;
+	float:left;
+	margin-top:8px;
+	text-indent:20.5px;
+	}
+.rightcontent li{
+	font-size:12px;
+	color:#06C;
+	margin-left:10px;
+	float:left;
+	list-style:none;}
+.rightcontent li:hover{
+	background:#3C3;}
+.navigation li a:hover{
+	background:#399;}
+#phonepic{
+	margin-left:60px;
+	margin-top:15px;}
+a{
+	text-decoration:none;
+	color:
+	#909;}
+#position{
+	padding-top:5px;
+	margin-left:690px;}
